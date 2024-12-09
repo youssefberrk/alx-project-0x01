@@ -1,4 +1,4 @@
-Here's a **README.md** template you can use for your project:
+
 
 ---
 
