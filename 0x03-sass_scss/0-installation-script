@@ -1,0 +1,36 @@
+
+### **Steps to Install Sass:**
+
+1. **Create a New Directory:**  
+   ```bash
+   mkdir 0x03-sass_scss
+   cd 0x03-sass_scss
+   ```
+
+2. **Install Node.js (Optional - if not already installed):**  
+   ```bash
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+   ```
+
+3. **Restart the Terminal:**  
+   ```bash
+   exit
+   ```
+
+4. **Reopen Terminal and Verify Installation:**  
+   ```bash
+   node -v    # Check Node.js version
+   npm -v     # Check npm version
+   ```
+
+5. **Install Sass:**  
+   ```bash
+   npm install sass
+   ```
+
+6. **Verify Sass Installation:**  
+   ```bash
+   npx sass --version
+   ```
+
+---
