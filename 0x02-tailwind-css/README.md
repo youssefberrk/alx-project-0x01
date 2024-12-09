@@ -1,4 +1,4 @@
-```markdown
+
 # CSS Grid and Flexbox: Creating Complex, Responsive Layouts Using Tailwind
 
 ## Novice Level Project
@@ -103,7 +103,7 @@ alx-intermediate-frontend/
 ## **How to Run**
 1. Clone the repository:
    ```bash
-   git clone https://github.com/<your-username>/alx-intermediate-frontend.git
+   git clone https://github.com/youssefberrk/alx-intermediate-frontend.git
    ```
 2. Navigate to the project directory:
    ```bash
@@ -134,4 +134,4 @@ alx-intermediate-frontend/
 
 ## **Acknowledgements**
 Special thanks to the **ALX Intermediate Frontend Curriculum** for providing this structured learning project.  
-```                                           youssef Berrakouan.
+```                                                                                                             youssef Berrakouan.
