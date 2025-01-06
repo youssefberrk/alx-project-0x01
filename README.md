@@ -1,56 +1,92 @@
----
+# Next.js Project Setup and Basics
 
-# ALX Intermediate Frontend
+We will break down the structure of an Airbnb clone project set up using `create-next-app` with TypeScript, ESLint, and Tailwind CSS. This project is designed without the `src` directory, App Router, and uses custom aliasing for cleaner imports. Let’s explore each component, folder, and file to understand their roles within the project.
 
-Welcome to the **ALX Intermediate Frontend** repository! This repository contains various projects and exercises designed to build and expand your knowledge of frontend development using modern web technologies. It is part of the **ALX Software Engineering Program** aimed at advancing your skills in HTML, CSS, JavaScript, and frontend frameworks.
+## Project Setup
+To initialize the project, we use the following command:
 
----
+```bash
+npx create-next-app@latest airbnb-clone --typescript --eslint --tailwind
+```
 
-## Introduction
+Choose the following options:
+- `src` directory: No  
+- App Router: No  
+- Customize the default import alias: Yes (use `@/*` for simpler imports)
 
-The **ALX Intermediate Frontend** repository is meant to help you master key frontend concepts and prepare for more advanced topics in web development. It contains a variety of mini-projects focusing on different aspects of frontend development such as:
+This command scaffolds a Next.js project with TypeScript, ESLint, and Tailwind CSS, creating a solid foundation for our Airbnb clone.
 
-- HTML and CSS basics
-- JavaScript fundamentals
-- Responsive design
-- CSS preprocessors (SASS/SCSS)
-- Modern JavaScript tools and libraries
+## Project Structure Overview
+The project is divided into several folders and files, each serving a specific purpose:
 
-Through this repository, you will be building a solid foundation for creating real-world web applications.
+### 1. Root Directory
+The root directory contains essential files and folders required to run the project:
+- `pages/`: Houses all page components. Each file within this directory corresponds to a route in the application.
+- `components/`: Contains reusable components used across various pages.
+- `public/`: Stores static files like images and icons.
+- `styles/`: Manages global and component-specific styling with Tailwind CSS.
+- `utils/`: Contains helper functions that simplify tasks like API calls and data formatting.
+- `hooks/`: Custom React hooks for managing state and reusing logic.
+- `context/`: Global state management through React context providers.
+- `assets/`: Additional static assets, such as fonts or SVG icons.
 
----
+### 2. Key Folders and Their Roles
 
-## Project Overview
+#### `pages/`
+**Purpose:** Defines the main pages of the application.  
+**Files:**
+- `index.tsx`: Home - Listing Page displaying all available properties.
+- `[slug].tsx`: Dynamic route for the Detail Page, providing information on a selected listing.
+- `checkout.tsx`: Checkout Page where users can review and confirm bookings.
 
-This repository contains multiple projects and exercises structured as **task-driven learning**. You'll learn by completing specific tasks, working with **SASS/SCSS**, and practicing **responsive design** principles.
+#### `components/`
+**Purpose:** Contains modular, reusable components that help build the UI.  
+**Components:**
+- `ListingCard.tsx`: Displays property information on the Home Page.
+- `Navbar.tsx` & `Footer.tsx`: Layout components used for navigation and footer content on every page.
+- `DetailView.tsx`: Presents detailed information about a specific property.
+- `CheckoutForm.tsx`: Form component handling checkout details.
+- `ImageGallery.tsx`: A gallery for displaying images in the Detail Page.
+- `ReviewSection.tsx`: Lists reviews on the Detail Page.
 
-Each project is designed to introduce new frontend concepts, provide hands-on practice, and help reinforce your knowledge of frontend technologies.
+#### `styles/`
+**Purpose:** Manages CSS, utilizing Tailwind CSS for utility-first styling.  
+**Files:**
+- `globals.css`: Global styles and Tailwind CSS configuration.
+- `tailwind.config.js` and `postcss.config.js`: Configuration files for Tailwind CSS.
 
-### Key Topics:
-- **HTML & CSS**
-  - Semantic HTML structure
-  - Flexbox & Grid layout systems
-  - Responsive design techniques
-  - CSS preprocessors (SASS/SCSS)
-- **JavaScript**
-  - Functions, loops, and arrays
-  - DOM manipulation
-  - Working with external libraries
-- **SASS/SCSS**
-  - Variables, mixins, and nesting
-  - Debugging CSS output
-  - Using functions in SASS for efficient styling
+#### `utils/`
+**Purpose:** Holds utility functions for reusable logic.  
+**Files:**
+- `apiClient.ts`: Configurations and functions for API calls.
+- `formatPrice.ts`: Formats currency for price display.
 
----
+#### `hooks/`
+**Purpose:** Contains custom hooks to manage specific logic.  
+**Files:**
+- `useListings.ts`: Manages data fetching for property listings.
+- `useCart.ts`: Manages state for items added to the cart.
 
-## Technologies
+#### `context/`
+**Purpose:** Global state management using React Context API.  
+**Files:**
+- `CartContext.tsx`: Provides a context for managing the cart globally.
+- `UserContext.tsx`: Handles user authentication and state.
 
-The **ALX Intermediate Frontend** repository focuses on the following technologies:
+### 3. Essential Configuration Files
 
-- **HTML5**: The foundational markup language used to structure content on the web.
-- **CSS3**: The stylesheet language for designing the layout, colors, fonts, and overall look and feel of web pages.
-- **SASS/SCSS**: A powerful CSS preprocessor that enhances CSS with variables, mixins, nesting, and more.
-- **JavaScript (ES6+)**: A programming language that enables interactive web pages. Modern JavaScript features like promises, async/await, and arrow functions are covered.
-- **Node.js & NPM**: Tools for managing JavaScript dependencies and setting up development environments.
+#### `tsconfig.json`
+**Purpose:** TypeScript configuration file for managing paths and aliases.  
+**Example Aliases:**
+```json
+"paths": {
+  "@/components/*": ["components/*"],
+  "@/hooks/*": ["hooks/*"],
+  "@/utils/*": ["utils/*"],
+  "@/context/*": ["context/*"],
+  "@/assets/*": ["assets/*"]
+}
+```
 
----
+#### `tailwind.config.js` & `postcss.config.js`
+**Purpose:** Configures Tailwind CSS for styling and sets up PostCSS for processing CSS.
